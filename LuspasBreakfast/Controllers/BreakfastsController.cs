@@ -1,5 +1,6 @@
 using LuspasBreakfast.Contracts.Breakfast;
 using LuspasBreakfast.Models;
+using LuspasBreakfast.Services.Breakfasts;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LuspasBreakfast.Controllers;
@@ -8,6 +9,13 @@ namespace LuspasBreakfast.Controllers;
 [Route("[controller]")]
 public class BreakfastsController : ControllerBase
 {
+  private readonly IBreakfastService _breakfastService;
+
+  public BreakfastsController(IBreakfastService breakfastService)
+  {
+    _breakfastService = breakfastService;
+  }
+
   [HttpPost]
   public IActionResult CreateBreakfast(CreateBreakfastRequest request)
   {
