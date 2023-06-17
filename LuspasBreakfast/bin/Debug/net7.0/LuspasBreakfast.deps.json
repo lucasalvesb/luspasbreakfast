@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "LuspasBreakfast/1.0.0": {
+        "dependencies": {
+          "LuspasBreakfast.Contracts": "1.0.0"
+        },
+        "runtime": {
+          "LuspasBreakfast.dll": {}
+        }
+      },
+      "LuspasBreakfast.Contracts/1.0.0": {
+        "runtime": {
+          "LuspasBreakfast.Contracts.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LuspasBreakfast/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LuspasBreakfast.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

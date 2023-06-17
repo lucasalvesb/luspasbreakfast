@@ -1,0 +1,12 @@
+C:\Users\User\LuspasBreakfast\LuspasBreakfast.Contracts\bin\Debug\net7.0\LuspasBreakfast.Contracts.deps.json
+C:\Users\User\LuspasBreakfast\LuspasBreakfast.Contracts\bin\Debug\net7.0\LuspasBreakfast.Contracts.dll
+C:\Users\User\LuspasBreakfast\LuspasBreakfast.Contracts\bin\Debug\net7.0\LuspasBreakfast.Contracts.pdb
+C:\Users\User\LuspasBreakfast\LuspasBreakfast.Contracts\obj\Debug\net7.0\LuspasBreakfast.Contracts.csproj.AssemblyReference.cache
+C:\Users\User\LuspasBreakfast\LuspasBreakfast.Contracts\obj\Debug\net7.0\LuspasBreakfast.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\LuspasBreakfast\LuspasBreakfast.Contracts\obj\Debug\net7.0\LuspasBreakfast.Contracts.AssemblyInfoInputs.cache
+C:\Users\User\LuspasBreakfast\LuspasBreakfast.Contracts\obj\Debug\net7.0\LuspasBreakfast.Contracts.AssemblyInfo.cs
+C:\Users\User\LuspasBreakfast\LuspasBreakfast.Contracts\obj\Debug\net7.0\LuspasBreakfast.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\User\LuspasBreakfast\LuspasBreakfast.Contracts\obj\Debug\net7.0\LuspasBreakfast.Contracts.dll
+C:\Users\User\LuspasBreakfast\LuspasBreakfast.Contracts\obj\Debug\net7.0\refint\LuspasBreakfast.Contracts.dll
+C:\Users\User\LuspasBreakfast\LuspasBreakfast.Contracts\obj\Debug\net7.0\LuspasBreakfast.Contracts.pdb
+C:\Users\User\LuspasBreakfast\LuspasBreakfast.Contracts\obj\Debug\net7.0\ref\LuspasBreakfast.Contracts.dll
