@@ -1,10 +1,23 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {
+    "net6.0": {
+      "ErrorOr/1.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/ErrorOr.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/ErrorOr.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "LuspasBreakfast.Contracts/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
+        "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
           "bin/placeholder/LuspasBreakfast.Contracts.dll": {}
         },
@@ -15,6 +28,22 @@
     }
   },
   "libraries": {
+    "ErrorOr/1.2.1": {
+      "sha512": "5xcbQErEPQKq2z/sLwSaFPX3T2G7x4ISX0us0X7jSxXSQT/wlfOOhw4knPUN/GWOf2strhuzdvRA36JViwvu+A==",
+      "type": "package",
+      "path": "erroror/1.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "erroror.1.2.1.nupkg.sha512",
+        "erroror.nuspec",
+        "icon-square.png",
+        "lib/net6.0/ErrorOr.dll",
+        "lib/net6.0/ErrorOr.xml",
+        "lib/netstandard2.0/ErrorOr.dll",
+        "lib/netstandard2.0/ErrorOr.xml"
+      ]
+    },
     "LuspasBreakfast.Contracts/1.0.0": {
       "type": "project",
       "path": "../LuspasBreakfast.Contracts/LuspasBreakfast.Contracts.csproj",
@@ -22,7 +51,8 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net7.0": [
+    "net6.0": [
+      "ErrorOr >= 1.2.1",
       "LuspasBreakfast.Contracts >= 1.0.0"
     ]
   },
@@ -48,7 +78,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net7.0"
+        "net6.0"
       ],
       "sources": {
         "C:\\Program Files\\dotnet\\library-packs": {},
@@ -58,8 +88,8 @@
         "https://pkgs.dev.azure.com/tdbaplicativos/_packaging/Toledo-do-Brasil-Packages/nuget/v3/index.json": {}
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "projectReferences": {
             "C:\\Users\\User\\LuspasBreakfast\\LuspasBreakfast.Contracts\\LuspasBreakfast.Contracts.csproj": {
               "projectPath": "C:\\Users\\User\\LuspasBreakfast\\LuspasBreakfast.Contracts\\LuspasBreakfast.Contracts.csproj"
@@ -74,8 +104,14 @@
       }
     },
     "frameworks": {
-      "net7.0": {
-        "targetAlias": "net7.0",
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "dependencies": {
+          "ErrorOr": {
+            "target": "Package",
+            "version": "[1.2.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

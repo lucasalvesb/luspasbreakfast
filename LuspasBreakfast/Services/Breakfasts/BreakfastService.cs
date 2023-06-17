@@ -1,4 +1,6 @@
+using ErrorOr;
 using LuspasBreakfast.Models;
+using LuspasBreakfast.ServiceErrors;
 
 namespace LuspasBreakfast.Services.Breakfasts;
 
@@ -13,16 +15,21 @@ public class BreakfastService : IBreakfastService
 
   public void DeleteBreakfast(Guid id)
   {
-    throw new NotImplementedException();
+    _breakfasts.Remove(id);
   }
 
-  public Breakfast GetBreakfast(Guid id)
+  public ErrorOr<Breakfast> GetBreakfast(Guid id)
   {
-    return _breakfasts[id];
+    if (_breakfasts.TryGetValue(id, out var breakfast))
+    {
+      return breakfast;
+    }
+    
+    return Errors.Breakfast.NotFound;
   }
 
   public void UpsertBreakfast(Breakfast breakfast)
   {
-    throw new NotImplementedException();
+    _breakfasts[breakfast.Id] = breakfast;
   }
 }
