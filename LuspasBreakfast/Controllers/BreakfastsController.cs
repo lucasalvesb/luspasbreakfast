@@ -1,4 +1,5 @@
-using BuberBreakfast.Contracts.Breakfast;
+using LuspasBreakfast.Contracts.Breakfast;
+using LuspasBreakfast.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LuspasBreakfast.Controllers;
@@ -7,10 +8,36 @@ namespace LuspasBreakfast.Controllers;
 [Route("[controller]")]
 public class BreakfastsController : ControllerBase
 {
-  [HttpPost()]
+  [HttpPost]
   public IActionResult CreateBreakfast(CreateBreakfastRequest request)
   {
-    return Ok(request);
+    var breakfast = new Breakfast(
+      Guid.NewGuid(),
+      request.Name,
+      request.Description,
+      request.StartDateTime,
+      request.EndDateTime,
+      DateTime.UtcNow,
+      request.Savory,
+      request.Sweet
+    );
+
+
+    var response = new BreakfastResponse(
+      breakfast.Id,
+      breakfast.Name,
+      breakfast.Description,
+      breakfast.StartDateTime,
+      breakfast.EndDateTime,
+      breakfast.LastModifiedDateTime,
+      breakfast.Savory,
+      breakfast.Sweet
+    );
+
+    return CreatedAtAction(
+      actionName: nameof(GetBreakfast),
+      routeValues: new { id = breakfast.Id },
+      value: response);
   }
 
   [HttpGet("{id:guid}")]

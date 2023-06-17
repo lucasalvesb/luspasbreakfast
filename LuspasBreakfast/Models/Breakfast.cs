@@ -1,4 +1,4 @@
-namespace BuberBreakfast.Contracts.Breakfast;
+namespace LuspasBreakfast.Models;
 
 public class Breakfast {
     public Guid Id { get; }
