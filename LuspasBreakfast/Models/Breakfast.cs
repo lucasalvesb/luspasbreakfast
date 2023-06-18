@@ -52,14 +52,21 @@ public class Breakfast {
     var id = Guid.NewGuid();
     var lastModifiedDateTime = DateTime.UtcNow;
 
+
+    List<Error> errors = new();
     if (name.Length is < MinNameLength or > MaxNameLength)
     {
-      return Errors.Breakfast.InvalidName;
+      errors.Add(Errors.Breakfast.InvalidName);
     }
 
     if (description.Length is < MinDescriptionLength or > MaxDescriptionLength)
     {
-      return Errors.Breakfast.InvalidDescription;
+      errors.Add(Errors.Breakfast.InvalidDescription);
+    }
+
+    if (errors.Count > 0)
+    {
+      return errors;
     }
     
     var breakfast = new Breakfast(
