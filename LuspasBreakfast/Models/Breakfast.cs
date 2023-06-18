@@ -46,12 +46,9 @@ public class Breakfast {
     DateTime startDateTime, 
     DateTime endDateTime, 
     List<string> savory, 
-    List<string> sweet)
+    List<string> sweet,
+    Guid? id = null)
   {
-
-    var id = Guid.NewGuid();
-    var lastModifiedDateTime = DateTime.UtcNow;
-
 
     List<Error> errors = new();
     if (name.Length is < MinNameLength or > MaxNameLength)
@@ -70,12 +67,12 @@ public class Breakfast {
     }
     
     var breakfast = new Breakfast(
-      id,
+      id ?? Guid.NewGuid(),
       name,
       description,
       startDateTime,
       endDateTime,
-      lastModifiedDateTime,
+      DateTime.UtcNow,
       savory,
       sweet
     );
