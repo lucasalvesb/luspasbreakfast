@@ -7,9 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LuspasBreakfast.Controllers;
 
-[ApiController]
-[Route("[controller]")]
-public class BreakfastsController : ControllerBase
+
+public class BreakfastsController : ApiController
 {
   private readonly IBreakfastService _breakfastService;
 
@@ -55,27 +54,27 @@ public class BreakfastsController : ControllerBase
   [HttpGet("{id:guid}")]
   public IActionResult GetBreakfast(Guid id)
   {
-   ErrorOr<Breakfast> getBreakfastResult = _breakfastService.GetBreakfast(id);
+    ErrorOr<Breakfast> getBreakfastResult = _breakfastService.GetBreakfast(id);
 
-   if(getBreakfastResult.IsError && getBreakfastResult.FirstError == Errors.Breakfast.NotFound)
-   {
-    return NotFound();
-   }
-
-    var breakfast = getBreakfastResult.Value;
-    
-    var response = new BreakfastResponse(
-      breakfast.Id,
-      breakfast.Name,
-      breakfast.Description,
-      breakfast.StartDateTime,
-      breakfast.EndDateTime,
-      breakfast.LastModifiedDateTime,
-      breakfast.Savory,
-      breakfast.Sweet
+    return getBreakfastResult.Match(
+      breakfast => Ok(MapBreakfastResponse(breakfast)),
+      errors => Problem(errors)
     );
 
-    return Ok(response);
+  }
+
+  private static BreakfastResponse MapBreakfastResponse(Breakfast breakfast)
+  {
+    return new BreakfastResponse(
+          breakfast.Id,
+          breakfast.Name,
+          breakfast.Description,
+          breakfast.StartDateTime,
+          breakfast.EndDateTime,
+          breakfast.LastModifiedDateTime,
+          breakfast.Savory,
+          breakfast.Sweet
+        );
   }
 
   [HttpPut("{id:guid}")]
