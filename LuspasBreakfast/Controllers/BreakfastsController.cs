@@ -1,7 +1,6 @@
 using ErrorOr;
 using LuspasBreakfast.Contracts.Breakfast;
 using LuspasBreakfast.Models;
-using LuspasBreakfast.ServiceErrors;
 using LuspasBreakfast.Services.Breakfasts;
 using Microsoft.AspNetCore.Mvc;
 
